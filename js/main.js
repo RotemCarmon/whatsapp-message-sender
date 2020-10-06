@@ -1,4 +1,5 @@
 'use strict';
+console.log('hello main');
 
 function getWhatsAppLink() {
     const phone = document.querySelector('.phone-input').value;
