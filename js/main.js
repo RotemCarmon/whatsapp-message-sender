@@ -7,8 +7,10 @@ function getWhatsAppLink() {
     if (!validateNumber(phoneNum)) return alert('Invalid number!');
 
     const txt = document.querySelector('.text-input').value;
+    const message = txt.replaceAll(/\n/g,'%0D%0A')
+    console.log("getWhatsAppLink -> message", message)
 
-    const linkTemplate = `https://api.whatsapp.com/send?phone=${phoneNum}&text=${txt}&source=&data=&app_absent=`;
+    const linkTemplate = `https://api.whatsapp.com/send?phone=${phoneNum}&text=${message}&source=&data=&app_absent=`;
     window.open(linkTemplate, '_blank');
     document.querySelector('.phone-input').value = '';
     document.querySelector('.text-input').value = '';
