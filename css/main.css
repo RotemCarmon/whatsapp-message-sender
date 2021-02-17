@@ -1,7 +1,10 @@
+html {
+    font-size: 18px;
+    font-family: 'Lato';
+    
+}
 body {
     margin: 0;
-    font-size: 1.2em;
-    /* background-color: rgb(46, 62, 70); */
 }
 .container {
     display: flex;
@@ -12,6 +15,17 @@ body {
     height: 100vh;
 }
 
+.msgs-options {
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.msgs-options h2 {
+    margin: 0;
+    margin-bottom: 15px;
+}
+
 .phone-input {
     height: 30px;
     margin-bottom: 10px;
@@ -19,8 +33,8 @@ body {
 .text-input {
     height: 80px;
     resize: vertical;
-    
 }
+
 
 .input {
     color: #5b5f62;
@@ -36,6 +50,8 @@ body {
 }
 .input::placeholder {
     text-align: center;
+    font-family: inherit;
+    /* font-size: inherit; */
 }
 .input:focus.input::placeholder {
     color: rgb(237, 248, 245);

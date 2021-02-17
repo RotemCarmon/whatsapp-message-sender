@@ -3,7 +3,7 @@ console.log('hello main');
 
 function getWhatsAppLink() {
     const phone = document.querySelector('.phone-input').value;
-    const phoneNum = formatNumber(phone);
+    const phoneNum = formatNumber(phone.trim());
     if (!validateNumber(phoneNum)) return alert('Invalid number!');
 
     const txt = document.querySelector('.text-input').value;
@@ -13,7 +13,7 @@ function getWhatsAppLink() {
     const linkTemplate = `https://api.whatsapp.com/send?phone=${phoneNum}&text=${message}&source=&data=&app_absent=`;
     window.open(linkTemplate, '_blank');
     document.querySelector('.phone-input').value = '';
-    document.querySelector('.text-input').value = '';
+    // document.querySelector('.text-input').value = '';
 }
 
 function formatNumber(num) {
@@ -32,3 +32,8 @@ function validateNumber(num) {
         return validDigits.includes(digit);
     });
 }
+
+// function setTemplateTxt(temp){
+//     console.log(temp);
+//     document.querySelector('.text-input').value = temp
+// }
